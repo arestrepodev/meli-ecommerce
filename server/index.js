@@ -2,8 +2,7 @@ import express from "express";
 import next from "next";
 import dotenv from 'dotenv';
 dotenv.config();
-import { mappedData } from './utils.js';
-
+import { mappedDataSearch, mappedDataDetails } from './utils.js';
 
 const dev = process.env.NODE_ENV !== "production";
 const app = next({ dev });
@@ -11,22 +10,37 @@ const handle = app.getRequestHandler();
 
 app.prepare().then(() => {
   const server = express();
-
   const API_URL = process.env.MELI_API_URL;
-  console.log(API_URL);
 
   // Endpoint to search products
   server.get("/api/search", async (req, res) => {
-    const { q } = req.query;
     try {
-      const response = await fetch(`${API_URL}search?q=${q}`);
+      const { q, name, lastname } = req.query;
+      const author = { name, lastname } || {name: "", lastname: ""};
+      const response = await fetch(`${API_URL}sites/MLA/search?q=${q}`);
       const data = await response.json();
-      const dataResult = mappedData(data?.results);
+      const dataResult = mappedDataSearch(data?.results, author);
       console.log(dataResult);
       res.json(dataResult);
     } catch (error) {
       console.log(error);
-      res.status(500).json({ error: "Error fetching meli data search" });
+      res.status(500).json({ error: "Error fetching MELI data search" });
+    }
+  });
+
+  // Endpoint to get product details
+  server.get("/api/items/:id", async (req, res) => {
+    try {
+      const { id } = req.params;
+      const { name, lastname } = req.query;
+      const author = { name, lastname } || {name: "", lastname: ""};
+      const response = await fetch(`${API_URL}items/${id}`);
+      const data = await response.json();
+      const dataResult = mappedDataDetails(data, author);
+      res.json(dataResult);
+    } catch (error) {
+      console.log(error);
+      res.status(500).json({ error: "Error fetching MELI data details" });
     }
   });
   

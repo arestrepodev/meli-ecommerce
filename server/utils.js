@@ -6,12 +6,9 @@ export const formatPrice = (amount, currency) => {
   }).format(amount);
 };
 
-export const mappedData = (results) => {
+export const mappedDataSearch = (results, author) => {
   return {
-    author: {
-      name: "Arnold",
-      lastname: "Restrepo Hernandez",
-    },
+    author: { ...author },
     items: results.map(item => ({
       categories: item.category_id ? [item.category_id] : [],
       id: item.id,
@@ -25,5 +22,26 @@ export const mappedData = (results) => {
       condition: item.condition,
       free_shipping: item.shipping && item.shipping.free_shipping,
     })),
+  };
+};
+
+export const mappedDataDetails = (data, author) => { 
+  return {
+    author: {
+      name: author?.name,
+      lastname: author?.lastname,
+    },
+    item: {
+      id: data?.id,
+      title: data?.title,
+      price: {
+        currency: data?.currency_id,
+        amount: formatPrice(data?.price, data?.currency_id),
+        decimals: 0,
+      },
+      picture: data?.pictures[0]?.secure_url,
+      condition: data?.condition,
+      free_shipping: data?.shipping?.free_shipping,
+    },
   };
 };
