@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "../styles/global.css";
+import Search from '@/components/search';
 
 export const metadata: Metadata = {
   title: "Mercado Libre - Arnold Restrepo",

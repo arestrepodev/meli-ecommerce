@@ -1,10 +1,12 @@
 import styles from './item.module.css';
 import { ItemProps } from "@/models/item";
 import Image from "next/image";
+import Link from "next/link";
 
 export const Item: React.FC<ItemProps> = (props) => {
   const { id, title, price, picture, condition, free_shipping } = props;
   return (
+    <Link href={`/items/${id}`} id={id} className={styles.itemLink}>
     <article id={id} className={styles.item}>
       <Image src={picture} alt={title} width={180} height={180} className={styles.itemImage} />
       <div className={styles.itemTitleContainer}>
@@ -17,6 +19,7 @@ export const Item: React.FC<ItemProps> = (props) => {
       <div className={styles.itemConditionContainer}>
         <p>{condition}</p>
       </div>
-    </article>
+      </article>
+    </Link>
   )
 }
