@@ -20,7 +20,6 @@ app.prepare().then(() => {
       const response = await fetch(`${API_URL}sites/MLA/search?q=${q}`);
       const data = await response.json();
       const dataResult = mappedDataSearch(data?.results, author);
-      console.log(dataResult);
       res.json(dataResult);
     } catch (error) {
       console.log(error);
