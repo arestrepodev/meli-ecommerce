@@ -3,15 +3,17 @@ import next from "next";
 import dotenv from 'dotenv';
 dotenv.config();
 import { mappedDataSearch, mappedDataDetails } from './utils.js';
-
 const dev = process.env.NODE_ENV !== "production";
 const app = next({ dev });
 const handle = app.getRequestHandler();
+import cors from 'cors';
+
 
 app.prepare().then(() => {
   const server = express();
   const API_URL = process.env.MELI_API_URL;
 
+  server.use(cors({ origin: "http://localhost:3000" }));
   // Endpoint to search products
   server.get("/api/search", async (req, res) => {
     try {
@@ -47,5 +49,5 @@ app.prepare().then(() => {
   server.listen(3001, (err) => {
     if (err) throw new err;
     console.log("Server is running on port 3001");
-   })
+  })
 });

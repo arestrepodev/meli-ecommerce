@@ -28,12 +28,12 @@
   padding: 0 10px;
 }
 .searchInput::placeholder {
-  color: var(--light-grey);
+  color: var(--light-gray);
 }
 
 .searchInput:focus {
   outline: none;
-  border: 1px solid var(--light-grey);
+  border: 1px solid var(--light-gray);
 }
 
 .searchButton {

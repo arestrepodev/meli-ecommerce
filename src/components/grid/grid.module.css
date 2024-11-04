@@ -1,0 +1,9 @@
+.grid {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0 auto;
+  max-width: var(--max-width);
+  background-color: white;
+  padding: 0 16px;
+}
