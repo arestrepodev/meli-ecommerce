@@ -2,7 +2,6 @@ import { Breadcrumb } from '@/components/breadcrumb';
 import Search from '@/components/search';
 import { ItemProps } from "@/models/item";
 import { redirect } from 'next/navigation';
-import Image from 'next/image';
 import { Detail } from '@/components/detail';
 
 

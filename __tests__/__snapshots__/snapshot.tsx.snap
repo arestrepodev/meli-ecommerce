@@ -1,0 +1,70 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home renders homepage unchanged 1`] = `
+<div>
+  <div>
+    <div
+      class="container"
+    >
+      <header
+        class="header"
+      >
+        <a
+          href="/"
+        >
+          <img
+            alt="logo"
+            data-nimg="1"
+            decoding="async"
+            height="36"
+            src="/_next/image?url=%2Fimages%2FLogo_ML%402x.png&w=128&q=75"
+            srcset="/_next/image?url=%2Fimages%2FLogo_ML%402x.png&w=64&q=75 1x, /_next/image?url=%2Fimages%2FLogo_ML%402x.png&w=128&q=75 2x"
+            style="color: transparent;"
+            width="53"
+          />
+        </a>
+        <form
+          class="form"
+        >
+          <input
+            class="searchInput"
+            data-testid="search-input"
+            name="search"
+            placeholder="Nunca dejes de buscar"
+            type="text"
+          />
+          <button
+            class="searchButton"
+            type="submit"
+          >
+            <img
+              alt="search"
+              data-nimg="1"
+              decoding="async"
+              height="18"
+              src="/_next/image?url=%2Fimages%2Fic_Search%402x.png&w=48&q=75"
+              srcset="/_next/image?url=%2Fimages%2Fic_Search%402x.png&w=32&q=75 1x, /_next/image?url=%2Fimages%2Fic_Search%402x.png&w=48&q=75 2x"
+              style="color: transparent;"
+              width="18"
+            />
+          </button>
+        </form>
+      </header>
+    </div>
+    <div
+      class="empty"
+    >
+      <p
+        class="emptyText"
+      >
+        ¡Desde lo esencial hasta lo inesperado, encuentra lo que buscas aquí! 🚀
+      </p>
+      <p
+        class="emptyText"
+      >
+        Usa el buscador para encontrar productos ☝️
+      </p>
+    </div>
+  </div>
+</div>
+`;
