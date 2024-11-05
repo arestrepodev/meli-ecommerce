@@ -1,8 +1,9 @@
 import styles from './detail.module.css';
 import { ItemProps } from '@/models/item';
 import Image from 'next/image';
+
 export const Detail: React.FC<ItemProps> = (props) => {
-  const { picture, title, description, free_shipping, condition, price } = props;
+  const { picture, title, description, condition, price } = props;
   return <section className={styles.detail}>
     <div>
       <Image src={picture} alt={title} width={180} height={180} className={styles.detailImage} priority/>

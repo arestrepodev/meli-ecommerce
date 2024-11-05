@@ -1,44 +1,34 @@
 "use client";
 import { Breadcrumb } from '@/components/breadcrumb';
+import Empty from '@/components/empty';
 import { Grid } from '@/components/grid';
 import { Item } from '@/components/Item';
+import Error from '@/components/error';
+import Loading from '@/components/loading';
 import Search from '@/components/search';
+import useFetchItems from '@/hooks/useFetchItems';
 import { ItemProps } from '@/models/item';
-import { useEffect, useState } from 'react';
-import { redirect, useSearchParams } from 'next/navigation'
+import { useSearchParams } from 'next/navigation'
 
 export default function Items() {
-  const [items, setItems] = useState<ItemProps[]>([]);
   const searchParams = useSearchParams();
-  const search = searchParams.get('search');
+  const search = searchParams.get('search') || '';
   const author = { name: "Arnold", lastname: "Restrepo" };
 
-  useEffect(() => {
-    const fetchItems = async () => {
-      const response = await fetch(`http://localhost:3001/api/search?q=${search}&name=${author.name}&lastname=${author.lastname}`);
-      const data = await response.json();
-      setItems(data?.items);
-    };
-    fetchItems();
-  }, [search]);
-
+  const { items, loading, error } = useFetchItems(search, author);
 
   return (
     <div>
       <Search />
-      <Breadcrumb />
+      {items.length > 0 && <Breadcrumb />}
+      {loading && <Loading />}
+      {error && <Error message={error} />}
+      {items.length === 0 && ( <Empty /> )}
       <Grid>
-        {
-          items.length > 0 ? (
-            items.map((item) => (
-              <Item key={item.id} {...item} />
-            ))
-          ) : (
-            <p>No items found</p>
-          )
-        }
+        {items.map((item: ItemProps) => (
+          <Item key={item.id} {...item} />
+        ))}
       </Grid>
-  
     </div>
   );
 }
