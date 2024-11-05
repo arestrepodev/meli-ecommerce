@@ -39,6 +39,7 @@ export const mappedDataDetails = (data, author) => {
         amount: formatPrice(data?.price, data?.currency_id),
         decimals: 0,
       },
+      description: data?.description || 'Sin descripcion',
       picture: data?.pictures[0]?.secure_url,
       condition: data?.condition,
       free_shipping: data?.shipping?.free_shipping,

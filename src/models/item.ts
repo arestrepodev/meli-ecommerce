@@ -8,5 +8,6 @@ export interface ItemProps {
   };
   picture: string;
   condition: string;
+  description: string;
   free_shipping: boolean;
 }

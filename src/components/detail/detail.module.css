@@ -1,0 +1,79 @@
+.detail {
+  width: 100%;
+  max-width: calc(var(--max-width) - 16px);
+  background-color: white;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 1fr auto;
+  border-radius: 4px;
+  padding: 32px;
+  gap: 16px;
+}
+
+
+.detailImage {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 4px;
+}
+
+.detailCondition {
+  display: block;
+  font-size: 14px;
+  color: var(--light-gray);
+  margin-bottom: 16px;
+}
+
+.detailTitle {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--black);
+  margin-bottom: 32px;
+}
+
+.detailPrice {
+  font-size: 46px;
+  font-weight: 400;
+  color: var(--black);
+  font-weight: 400;
+  margin-bottom: 32px;
+}
+
+.detailCurrency {
+  font-size: 18px;
+}
+
+.detailButton {
+  width: 100%;
+  background-color: var(--blue);
+  color: var(--white);
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.detailButton:hover {
+  background-color: var(--blue-hover);
+}
+
+.detailDescription {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.detailDescriptionTitle {
+  font-size: 28px;
+  font-weight: 400;
+  color: var(--black);
+}
+
+.detailDescriptionText {
+  font-size: 16px;
+  font-weight: 300;
+  color: var(--black);
+}

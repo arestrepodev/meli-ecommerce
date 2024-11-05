@@ -22,13 +22,10 @@ export default function Items() {
     fetchItems();
   }, [search]);
 
-   const handleSearch = (search: string) => {
-    redirect(`/items?search=${search}&name=${author.name}&lastname=${author.lastname}`);
-  };
 
   return (
     <div>
-      <Search setSearch={handleSearch} />
+      <Search />
       <Breadcrumb />
       <Grid>
         {

@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  transition: all 0.2s ease;
 }
 
 :root {
@@ -11,6 +12,7 @@
   --light-gray: #999999;
   --white: #EEEEEE;
   --blue: #3483FA;
+  --blue-hover: #2968CC;
   --max-width: 979px;
 }
 

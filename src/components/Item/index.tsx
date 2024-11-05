@@ -8,7 +8,7 @@ export const Item: React.FC<ItemProps> = (props) => {
   return (
     <Link href={`/items/${id}`} id={id} className={styles.itemLink}>
     <article id={id} className={styles.item}>
-      <Image src={picture} alt={title} width={180} height={180} className={styles.itemImage} />
+      <Image src={picture} alt={title} width={180} height={180} className={styles.itemImage} priority/>
       <div className={styles.itemTitleContainer}>
         <h1 className={styles.itemPrice}>
           {price.amount}
