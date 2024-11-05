@@ -13,6 +13,7 @@ app.prepare().then(() => {
   const server = express();
   const API_URL = process.env.MELI_API_URL;
 
+  // Only from test in localhost
   server.use(cors({ origin: "http://localhost:3000" }));
   // Endpoint to search products
   server.get("/api/search", async (req, res) => {

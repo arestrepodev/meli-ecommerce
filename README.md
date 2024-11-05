@@ -1,36 +1,139 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Mercado Libre Frontend Challenge Test
 
-## Getting Started
+Este proyecto es una prueba técnica que implementa una versión simplificada de la búsqueda de productos de Mercado Libre, utilizando Next.js 15 con App Router para el frontend y Express para el servidor API.
 
-First, run the development server:
+## 🛠 Tecnologías Utilizadas
 
+- Next.js 15
+- React
+- Express
+- Jest & React Testing Library
+- TypeScript
+- Node.js
+- CSS Modules
+
+## 🚀 Instalación y Ejecución
+
+1. **Clonar el repositorio**
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone <url-del-repositorio>
+cd <nombre-del-proyecto>
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. **Instalar dependencias**
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. **Ejecutar en desarrollo**
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Necesitarás ejecutar tanto el servidor como el cliente:
 
-## Learn More
+Terminal 1 (Cliente):
+```bash
+npm run dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+Terminal 2 (Servidor API):
+```bash
+npm run server
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📜 Scripts Disponibles
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- `npm run dev`: Inicia el servidor de desarrollo de Next.js
+- `npm run build`: Construye la aplicación para producción
+- `npm run start`: Inicia el servidor de producción
+- `npm run lint`: Ejecuta el linter
+- `npm run server`: Inicia el servidor API con nodemon
+- `npm test`: Ejecuta los tests
+- `npm run test:watch`: Ejecuta los tests en modo watch
 
-## Deploy on Vercel
+## 🤔 Decisiones Técnicas
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. **Estados del Cliente**
+   - Se implementaron estados para mejorar la experiencia de usuario:
+     - Loading: Durante la carga de datos
+     - Error: Para manejo de errores
+     - Empty: Cuando no hay productos
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+2. **Modificación de la API**
+   - Se agregó un campo de descripción por defecto en el servidor Express ya que la API original no lo proporciona.
+   - Esto permite mantener una consistencia en la visualización de los productos.
+
+3. **Testing**
+   Se implementaron tests para componentes críticos:
+   - Hook de fetching de items
+   - Componente de búsqueda
+   - Página de detalle de producto
+   - Página principal
+
+4. **Estilos**
+   - Se optó por CSS Modules en lugar de SASS por agilidad en el desarrollo
+   - Se tiene experiencia con SASS pero se priorizó la rapidez de implementación
+
+5. **Author Signature**
+   - Se implementó la firma del autor en el manejo de datos entre la API y el frontend según lo requerido
+   - Se agregó nombre y apellido en el campo author en las respuestas JSON
+
+## 💡 Mejoras Pendientes (Enhancements)
+
+1. **Categorías**
+   - Implementación del filtrado por categorías
+   - Mejora del breadcrumb basado en la categoría con más resultados
+   - No se implementó por restricciones de tiempo pero está contemplado en la arquitectura
+
+2. **Imágenes**
+   - Se utilizaron las imágenes de 90x90 proporcionadas por la API
+   - Como mejora se podría implementar la búsqueda de imágenes en tamaños más apropiados
+
+## 🗂 Estructura del Proyecto
+
+```
+/
+├── components/       # Componentes React reutilizables
+├── app/              # Páginas de Next.js
+├── server/           # Servidor Express
+├── models/           # TypeScript Models
+├── public/           # Archivos estáticos
+├── styles/           # CSS Modules y estilos globales
+├── __tests__/        # Tests            
+├── utils             # Funciones utilitarios
+└── hooks/            # Custom hooks
+```
+
+## 🧪 Testing
+
+El proyecto incluye tests unitarios y de integración para los componentes principales. Para ejecutar los tests:
+
+```bash
+# Ejecutar todos los tests
+npm test
+
+# Ejecutar tests en modo watch
+npm run test:watch
+```
+
+## 🔍 Funcionalidades Principales
+
+- Búsqueda de productos
+- Visualización de resultados
+- Detalle de producto
+- Manejo de estados de carga y error
+- API servidor para gestión de datos
+- Firma de autor en respuestas JSON
+
+## 📝 Notas Adicionales
+
+- El proyecto sigue las mejores prácticas de Next.js y React
+- Se implementó TypeScript para mayor seguridad de tipos
+- Se utilizó un enfoque modular para facilitar el mantenimiento
+- Los tests cubren los componentes críticos de la aplicación
+- El breadcrumb queda pendiente como mejora
+
+> [!IMPORTANT]
+> 📱 Redes Sociales
+
+- [LinkedIn](https://www.linkedin.com/in/arestrepodev/)
+- [GitHub](https://github.com/arestrepodev)
+- [Portfolio](https://arnoldrestrepo.dev)
