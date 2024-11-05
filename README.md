@@ -19,8 +19,8 @@ Este proyecto es una prueba técnica que implementa una versión simplificada de
 
 1. **Clonar el repositorio**
 ```bash
-git clone <url-del-repositorio>
-cd <nombre-del-proyecto>
+git clone https://github.com/arestrepodev/meli-ecommerce.git
+cd meli-ecommerce
 ```
 
 2. **Instalar dependencias**
