@@ -1,4 +1,4 @@
-# Mercado Libre Frontend Challenge Test
+# Mercado Libre Arnold Frontend Challenge
 
 Este proyecto es una prueba técnica que implementa una versión simplificada de la búsqueda de productos de Mercado Libre, utilizando Next.js 15 con App Router para el frontend y Express para el servidor API.
 
