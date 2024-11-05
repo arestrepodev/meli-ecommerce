@@ -12,7 +12,7 @@ export const Detail: React.FC<ItemProps> = (props) => {
       <span className={styles.detailCondition}>{condition.toUpperCase()} - 256 vendidos</span>
       <h1 className={styles.detailTitle}>{title}</h1>
       <h2 className={styles.detailPrice}>
-        {price?.amount}{price?.decimals}
+        <span>{price?.amount}</span><span>{price?.decimals}</span>
         <span className={styles.detailCurrency}>{price?.currency} </span>
       </h2>
       <button className={styles.detailButton}>Comprar</button>

@@ -1,20 +1,26 @@
 'use client';
+import { formatSearchQuery, AUTHOR } from '@/utils';
 import styles from "./search.module.css";
 import Image from "next/image";
 import Link from 'next/link';
 import { redirect } from 'next/navigation';
 
+
 const Search = () => {
+
+  const handleSearch = (search: string) => {
+    const formattedSearch = formatSearchQuery(search);
+    if (formattedSearch) {
+      redirect(`/items?search=${formattedSearch}&name=${AUTHOR.name}&lastname=${AUTHOR.lastname}`);
+    }
+  };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    handleSearch(e.currentTarget.search.value);
-  };
-
-  const author = { name: "Arnold", lastname: "Restrepo" };
-
-  const handleSearch = (search: string) => {
-    redirect(`/items?search=${search}&name=${author.name}&lastname=${author.lastname}`);
+    const form = e.target as HTMLFormElement;
+    const searchInput = form.querySelector('input[name="search"]') as HTMLInputElement;
+    const searchValue = searchInput?.value || '';
+    handleSearch(searchValue);
   };
 
   return (
