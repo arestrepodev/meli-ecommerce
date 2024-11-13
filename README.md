@@ -2,7 +2,8 @@
 
 Este proyecto es una prueba técnica que implementa una versión simplificada de la búsqueda de productos de Mercado Libre, utilizando Next.js 15 con App Router para el frontend y Express para el servidor API.
 
-<img width="1512" alt="image" src="https://github.com/user-attachments/assets/b0bffa2d-ccbd-4cb8-8555-cd77fdc79304">
+
+https://github.com/user-attachments/assets/354bb0ac-c890-47de-95fb-4648690db163
 
 
 ## 🛠 Tecnologías Utilizadas
